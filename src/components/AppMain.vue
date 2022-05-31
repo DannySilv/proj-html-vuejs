@@ -93,7 +93,20 @@
     </section>
     <!-- /MENU-CATEGORIES -->
     <!-- APP-AD -->
-    <div></div>
+    <div class="app-ad-container">
+      <div class="app-ad">
+        <h2>Download Our</h2>
+        <h1>Ordering App</h1>
+        <div class="btns-container">
+          <a href="">
+            <img src="../assets/img/app-store-badge.png" alt="AppStore" />
+          </a>
+          <a href="">
+            <img src="../assets/img/play-store-badge.png" alt="PlayStore" />
+          </a>
+        </div>
+      </div>
+    </div>
     <!-- /APP-AD -->
     <!-- LATEST-NEWS -->
     <section></section>
@@ -286,6 +299,42 @@ export default {
       }
       #brown {
         color: brown;
+      }
+    }
+  }
+}
+
+// APP-AD
+.app-ad-container {
+  width: 100%;
+  height: 350px;
+  background-image: url("../assets/img/app-ordering-scaled.jpg");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  .app-ad {
+    width: 65%;
+    height: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    h1 {
+      font-size: 2.5rem;
+      color: goldenrod;
+    }
+    .btns-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 1.5rem;
+      a {
+        width: 18%;
+      }
+      :nth-child(2) {
+        margin-left: 0.5rem;
       }
     }
   }

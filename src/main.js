@@ -9,6 +9,10 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faCarAlt } from "@fortawesome/free-solid-svg-icons";
+import { faLeaf } from "@fortawesome/free-solid-svg-icons";
+import { faBreadSlice } from "@fortawesome/free-solid-svg-icons";
+import { faWineBottle } from "@fortawesome/free-solid-svg-icons";
+import { faDrumstickBite } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add(faChevronDown);
@@ -18,6 +22,10 @@ library.add(faClock);
 library.add(faHamburger);
 library.add(faMobileAlt);
 library.add(faCarAlt);
+library.add(faLeaf);
+library.add(faBreadSlice);
+library.add(faWineBottle);
+library.add(faDrumstickBite);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 

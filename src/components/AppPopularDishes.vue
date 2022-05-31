@@ -1,10 +1,10 @@
 <template>
   <div class="card">
     <div class="img-container">
-      <img :src="dish.thumb" :alt="dish.name" />
+      <img :src="dishObj.thumb" :alt="dishObj.name" />
     </div>
-    <h3>{{ dish.name }}</h3>
-    <h5>{{ dish.price }}</h5>
+    <h3>{{ dishObj.name }}</h3>
+    <h5>{{ dishObj.price }}</h5>
   </div>
 </template>
 
@@ -12,7 +12,7 @@
 export default {
   name: "AppPopularDishes",
   props: {
-    dish: Object,
+    dishObj: Object,
   },
 };
 </script>
@@ -24,6 +24,7 @@ $cardinal: #cc1a26;
   height: 30%;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   .img-container {
     height: 100%;
   }

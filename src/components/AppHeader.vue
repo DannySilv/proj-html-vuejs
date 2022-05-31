@@ -115,6 +115,9 @@ $cardinal: #cc1a26;
     h1 {
       font-size: 2.5rem;
     }
+    :nth-child(3) {
+      margin-bottom: 0.8rem;
+    }
     .menu {
       background-color: white;
       height: 50px;

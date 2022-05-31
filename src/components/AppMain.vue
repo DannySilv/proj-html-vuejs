@@ -1,12 +1,13 @@
 <template>
   <div class="main">
-    <div class="dishes-container">
+    <!-- MOST-POPULAR-DISHES -->
+    <section class="dishes-container">
       <h2>Our Most Popular Dishes</h2>
       <div class="cards-container">
         <AppPopularDishes
           v-for="(dish, index) in popularDishes"
           :key="index"
-          :dish="dish"
+          :dishObj="dish"
         />
       </div>
       <div class="btn-container">
@@ -20,35 +21,95 @@
           </div>
         </a>
       </div>
-    </div>
+    </section>
+    <!-- /MOST-POPULAR-DISHES -->
+    <!-- DISCOUNT -->
     <div class="discount">
+      <div class="custom-shape-divider-top-1653966800">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
       <img src="../assets/img/wave-2.svg" alt="" />
       <img src="../assets/img/wave-1.svg" alt="" />
       <img src="../assets/img/wave-3.svg" alt="" />
     </div>
-    <div class="custom-shape-divider-top-1653966800">
-      <svg
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 120"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-          class="shape-fill"
-        ></path>
-      </svg>
-    </div>
+    <!-- /DISCOUNT -->
+    <!-- MENU-CATEGORIES -->
+    <section class="menu-container">
+      <div class="menu-header">
+        <h2>Menu Categories</h2>
+        <div class="btn-container">
+          <a href="">
+            <div class="btn">
+              VIEW THE FULL MENU
+              <font-awesome-icon
+                icon="fas fa-arrow-alt-circle-right"
+                class="icon"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="menu-content">
+        <AppMenu
+          v-for="(element, index) in menu"
+          :key="index"
+          :menuObj="element"
+        />
+        <div class="dish-types">
+          <font-awesome-icon icon="fas fa-leaf" class="icon" id="green" />
+          <h3>Vegetarian</h3>
+        </div>
+        <div class="dish-types">
+          <font-awesome-icon
+            icon="fas fa-bread-slice"
+            class="icon"
+            id="yellow"
+          />
+          <h3>Gluten Free</h3>
+        </div>
+        <div class="dish-types">
+          <font-awesome-icon icon="fas fa-wine-bottle" class="icon" id="cyan" />
+          <h3>Dairy Free</h3>
+        </div>
+        <div class="dish-types">
+          <font-awesome-icon
+            icon="fas fa-drumstick-bite"
+            class="icon"
+            id="brown"
+          />
+          <h3>Keto Friendly</h3>
+        </div>
+      </div>
+    </section>
+    <!-- /MENU-CATEGORIES -->
+    <!-- APP-AD -->
+    <div></div>
+    <!-- /APP-AD -->
+    <!-- LATEST-NEWS -->
+    <section></section>
+    <!-- /LATEST-NEWS -->
   </div>
 </template>
 
 <script>
 import AppPopularDishes from "./AppPopularDishes.vue";
+import AppMenu from "./AppMenu.vue";
 
 export default {
   name: "AppMain",
   components: {
     AppPopularDishes,
+    AppMenu,
   },
   data() {
     return {
@@ -69,12 +130,47 @@ export default {
           price: "$6,99",
         },
       ],
+      menu: [
+        {
+          thumb: require("../assets/img/appetizers-menu-background.jpg"),
+          name: "APPETIZERS",
+        },
+        {
+          thumb: require("../assets/img/burgers-menu-background.jpg"),
+          name: "BURGERS",
+        },
+        {
+          thumb: require("../assets/img/pizza-menu-background.jpg"),
+          name: "PIZZAS",
+        },
+        {
+          thumb: require("../assets/img/fries-menu-background.jpg"),
+          name: "FRIES",
+        },
+        {
+          thumb: require("../assets/img/sides-menu-background.jpg"),
+          name: "SIDES",
+        },
+        {
+          thumb: require("../assets/img/desserts-menu-background.jpg"),
+          name: "DESSERTS",
+        },
+        {
+          thumb: require("../assets/img/beverages-menu-background.jpg"),
+          name: "BEVERAGES",
+        },
+        {
+          thumb: require("../assets/img/specials-menu-background.jpg"),
+          name: "SPECIALS",
+        },
+      ],
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+// MOST-POPULAR-DISHES
 .dishes-container {
   width: 65%;
   margin: 0 auto;
@@ -98,6 +194,7 @@ export default {
   }
 }
 
+// DISCOUNT
 .custom-shape-divider-top-1653966800 {
   position: absolute;
   bottom: 120px;
@@ -105,6 +202,7 @@ export default {
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  z-index: 1;
 }
 
 .custom-shape-divider-top-1653966800 svg {
@@ -126,20 +224,70 @@ export default {
   background-image: url("../assets/img/first-order-background-scaled.jpg");
   background-size: cover;
   background-position: 0 40%;
-  :nth-child(1) {
+  img {
     position: absolute;
-    opacity: 0.4;
     top: 2px;
   }
   :nth-child(2) {
-    position: absolute;
-    opacity: 0.3;
-    top: 2px;
+    opacity: 0.4;
   }
   :nth-child(3) {
-    position: absolute;
+    opacity: 0.3;
+  }
+  :nth-child(4) {
     opacity: 0.2;
-    top: 2px;
+  }
+}
+
+//MENU-CATEGORIES
+.menu-container {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 70px;
+  .menu-header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .btn-container {
+      align-self: center;
+    }
+  }
+  .menu-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    .dish-types {
+      width: calc(100% / 4 - 8px);
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      .icon {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+      }
+      h3 {
+        font-size: 0.6rem;
+      }
+      #green {
+        color: green;
+      }
+      #yellow {
+        color: goldenrod;
+      }
+      #cyan {
+        color: cyan;
+      }
+      #brown {
+        color: brown;
+      }
+    }
   }
 }
 </style>

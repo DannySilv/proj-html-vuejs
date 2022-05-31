@@ -115,18 +115,6 @@ $cardinal: #cc1a26;
     h1 {
       font-size: 2.5rem;
     }
-    a {
-      color: white;
-      .btn {
-        background-color: $cardinal;
-        border: 1px solid $cardinal;
-        margin-top: 0.8rem;
-        padding: 0.4rem 1.5rem;
-        border-radius: 15px;
-        font-size: 0.5rem;
-        font-weight: 700;
-      }
-    }
     .menu {
       background-color: white;
       height: 50px;

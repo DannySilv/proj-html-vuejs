@@ -109,7 +109,29 @@
     </div>
     <!-- /APP-AD -->
     <!-- LATEST-NEWS -->
-    <section></section>
+    <section class="news-container">
+      <div class="news-header">
+        <h2>Latest News</h2>
+        <div class="btn-container">
+          <a href="">
+            <div class="btn">
+              READ MORE NEWS
+              <font-awesome-icon
+                icon="fas fa-arrow-alt-circle-right"
+                class="icon"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="news-content">
+        <AppNews
+          v-for="(element, index) in news"
+          :key="index"
+          :newsObj="element"
+        />
+      </div>
+    </section>
     <!-- /LATEST-NEWS -->
   </div>
 </template>
@@ -117,12 +139,14 @@
 <script>
 import AppPopularDishes from "./AppPopularDishes.vue";
 import AppMenu from "./AppMenu.vue";
+import AppNews from "./AppNews.vue";
 
 export default {
   name: "AppMain",
   components: {
     AppPopularDishes,
     AppMenu,
+    AppNews,
   },
   data() {
     return {
@@ -175,6 +199,20 @@ export default {
         {
           thumb: require("../assets/img/specials-menu-background.jpg"),
           name: "SPECIALS",
+        },
+      ],
+      news: [
+        {
+          thumb: require("../assets/img/pancake-burger.jpg"),
+          name: "NEW: The Pancake Burger",
+          descr:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        },
+        {
+          thumb: require("../assets/img/new-milkshake-menu.jpg"),
+          name: "New Milkshake Menu",
+          descr:
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
         },
       ],
     };
@@ -337,6 +375,30 @@ export default {
         margin-left: 0.5rem;
       }
     }
+  }
+}
+
+// LATEST-NEWS
+.news-container {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  .news-header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .btn-container {
+      align-self: center;
+    }
+  }
+  .news-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 35px;
   }
 }
 </style>

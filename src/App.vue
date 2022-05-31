@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AppHeader />
+    <AppHeader :navItems="navItems" />
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   components: {
     AppHeader,
   },
+  data() {
+    return {
+      navItems: ["Home", "Order Online", "About", "News", "Contact Us"],
+    };
+  },
 };
 </script>
 
@@ -19,11 +24,6 @@ export default {
 @import "./style/style.scss";
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
 }
 </style>

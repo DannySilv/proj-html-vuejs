@@ -30,8 +30,8 @@ export default {
   h3 {
     text-align: center;
     font-size: 1.2rem;
-    font-weight: 500;
-    margin: 0.4rem 0;
+    font-weight: 700;
+    margin: 0.8rem 0 0.4rem;
   }
   p {
     text-align: center;

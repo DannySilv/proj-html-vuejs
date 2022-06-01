@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <main class="main">
     <!-- MOST-POPULAR-DISHES -->
     <section class="dishes-container">
       <h2>Our Most Popular Dishes</h2>
@@ -133,7 +133,7 @@
       </div>
     </section>
     <!-- /LATEST-NEWS -->
-  </div>
+  </main>
 </template>
 
 <script>
@@ -369,7 +369,7 @@ export default {
       align-items: center;
       margin-top: 1.5rem;
       a {
-        width: 18%;
+        width: 100px;
       }
       :nth-child(2) {
         margin-left: 0.5rem;

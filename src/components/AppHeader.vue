@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <header class="container">
     <div class="header-container">
       <div class="logo-container">
         <img src="../assets/img/takeout-logo.png" alt="Takeout Logo" />
@@ -47,7 +47,7 @@
         </ul>
       </div>
     </section>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -101,7 +101,7 @@ $cardinal: #cc1a26;
   // HEADER-DESCRIPTION
   .jumbo {
     width: 65%;
-    height: 360px;
+    height: 400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -123,7 +123,7 @@ $cardinal: #cc1a26;
       height: 50px;
       width: 100%;
       position: absolute;
-      bottom: -95px;
+      bottom: -55px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;

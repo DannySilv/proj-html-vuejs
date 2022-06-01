@@ -8,6 +8,7 @@
           v-for="(dish, index) in popularDishes"
           :key="index"
           :dishObj="dish"
+          @toParent="toCart($event)"
         />
       </div>
       <div class="btn-container">
@@ -148,25 +149,12 @@ export default {
     AppMenu,
     AppNews,
   },
+  props: {
+    popularDishes: Array,
+  },
   data() {
     return {
-      popularDishes: [
-        {
-          thumb: require("../assets/img/skin-on-fries.jpg"),
-          name: "Skin On Fries",
-          price: "$3 - $6",
-        },
-        {
-          thumb: require("../assets/img/choco-cookie-frappe.jpg"),
-          name: "Choco Cookie Frappe",
-          price: "$4,99",
-        },
-        {
-          thumb: require("../assets/img/donut-burger.jpg"),
-          name: "The Donut Burger",
-          price: "$6,99",
-        },
-      ],
+      cart: [],
       menu: [
         {
           thumb: require("../assets/img/appetizers-menu-background.jpg"),
@@ -216,6 +204,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    toCart(event) {
+      this.$emit("toCart", event);
+    },
   },
 };
 </script>

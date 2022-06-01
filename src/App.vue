@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <AppHeader :navItems="navItems" />
-    <AppMain />
+    <AppHeader
+      :navItems="navItems"
+      :cart="cart"
+      @delete="deleteProduct($event)"
+    />
+    <AppMain :popularDishes="popularDishes" @toCart="toCart($event)" />
     <AppFooter :footerElements="footerElements" />
   </div>
 </template>
@@ -22,6 +26,24 @@ export default {
     return {
       colored: false,
       navItems: ["Home", "Order Online", "About", "News", "Contact Us"],
+      popularDishes: [
+        {
+          thumb: require("./assets/img/skin-on-fries.jpg"),
+          name: "Skin On Fries",
+          price: 3,
+        },
+        {
+          thumb: require("./assets/img/choco-cookie-frappe.jpg"),
+          name: "Choco Cookie Frappe",
+          price: 4.99,
+        },
+        {
+          thumb: require("./assets/img/donut-burger.jpg"),
+          name: "The Donut Burger",
+          price: 6.99,
+        },
+      ],
+      cart: [],
       footerElements: [
         {
           name: "ORDER ONLINE",
@@ -74,6 +96,14 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    toCart(event) {
+      this.cart.push(event);
+    },
+    deleteProduct(index) {
+      this.cart.splice(index, 1);
+    },
   },
 };
 </script>

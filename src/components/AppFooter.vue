@@ -75,7 +75,9 @@
       </h6>
     </div>
     <div class="up-btn">
-      <font-awesome-icon icon="fas fa-chevron-up" class="icon" />
+      <a href="#header">
+        <font-awesome-icon icon="fas fa-chevron-up" class="icon" />
+      </a>
     </div>
   </footer>
 </template>

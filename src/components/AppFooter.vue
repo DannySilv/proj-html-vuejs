@@ -74,6 +74,9 @@
         <span> WordPress </span>
       </h6>
     </div>
+    <div class="up-btn">
+      <font-awesome-icon icon="fas fa-chevron-up" class="icon" />
+    </div>
   </footer>
 </template>
 
@@ -102,12 +105,33 @@ a {
   color: goldenrod;
 }
 
+.up-btn {
+  width: 30px;
+  height: 20px;
+  background-color: #555454;
+  border: 2px solid #555454;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  .icon {
+    font-size: 0.5rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .container {
   width: 100%;
   height: 650px;
   background-image: url("../assets/img/footer-background-scaled.jpg");
   background-position: bottom;
   background-size: cover;
+  position: relative;
   .footer-container {
     width: 75%;
     margin: 0 auto;
@@ -138,7 +162,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   a {
     width: 80px;
     border: 2px solid white;

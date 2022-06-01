@@ -5,7 +5,12 @@
         <img src="../assets/img/takeout-logo.png" alt="Takeout Logo" />
       </div>
       <ul class="nav">
-        <li v-for="(element, index) in navItems" :key="index">
+        <li
+          v-for="(element, index) in navItems"
+          :key="index"
+          :class="index === currentNav ? 'active' : ''"
+          @click="thisNav(index)"
+        >
           {{ element }} <font-awesome-icon icon="fas fa-chevron-down" />
         </li>
         <li>
@@ -56,11 +61,25 @@ export default {
   props: {
     navItems: Array,
   },
+  data() {
+    return {
+      currentNav: 0,
+    };
+  },
+  methods: {
+    thisNav(index) {
+      this.currentNav = index;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 $cardinal: #cc1a26;
+.active {
+  color: goldenrod !important;
+}
+
 .container {
   width: 100%;
   height: 500px;

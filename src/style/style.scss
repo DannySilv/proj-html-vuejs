@@ -34,6 +34,10 @@ img {
   border-radius: 15px;
   font-size: 0.5rem;
   font-weight: 700;
+  &:hover {
+    transform: scale(1.1, 1.1);
+    opacity: 0.9;
+  }
 }
 
 .main {

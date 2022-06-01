@@ -80,6 +80,7 @@ export default {
 
 <style lang="scss">
 @import "./style/style.scss";
+$cardinal: #cc1a26;
 
 #app {
   width: 100%;

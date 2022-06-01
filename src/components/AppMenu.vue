@@ -36,6 +36,10 @@ export default {
     background-color: #535353cc;
     opacity: 0.8;
   }
+  &:hover {
+    transform: scale(1.1, 1.1) translateY(-5px);
+    transition-duration: 1s;
+  }
   h3 {
     font-size: 0.7rem;
     font-weight: 700;

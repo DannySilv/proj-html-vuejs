@@ -24,8 +24,13 @@ export default {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.1, 1.1) translateY(-5px);
+    transition-duration: 1s;
+  }
   .img-container {
     height: 100%;
+    position: relative;
   }
   h3 {
     text-align: center;
